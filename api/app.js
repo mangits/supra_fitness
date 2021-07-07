@@ -79,7 +79,28 @@ app.get('/scores', function(req, res) {
         }
       }
     }
-
+    
+    // Filter out categories (pushups, run, or situps)
+    if (req.query.category) {
+      for (let gender of genders) {
+        for (let age of ages) {
+          for (let category in results[gender][age]){
+            if(req.query.category === 'run'){
+                delete results[gender][age].pushups_scores
+                delete results[gender][age].situps_scores
+            } else if (req.query.category === 'pushups') {
+                delete results[gender][age].situps_scores
+                delete results[gender][age].run_scores
+            } else if (req.query.category === 'situps') {
+                delete results[gender][age].run_scores
+                delete results[gender][age].pushups_scores
+            }
+          }
+        }
+      }
+    }
+    
+    // Filter out age groups
     if (req.query.age) {
       let ageToCheck = ages.filter(age => age >= Number.parseInt(req.query.age)).shift()
       for (let gender of genders) {
@@ -90,13 +111,33 @@ app.get('/scores', function(req, res) {
         }
       }
     }
-
+    
+    // Filter out sexes
     if (req.query.gender) {
       for (let gender of genders) {
         if (gender !== req.query.gender) {
           delete results[gender]
         }
       }
+    }
+    
+    // Simplify object being received
+    if (req.query.gender && req.query.age && req.query.raw) {
+      if (!req.query.category) {
+        for (let gender in results) {
+          for (let age in results[gender]) {
+            results = {...results[gender][age]}
+          }
+        }
+      } else {
+        for (let gender in results) {
+          for (let age in results[gender]) {
+            for (let category in results[gender][age]) {
+              results = [...results[gender][age][category]]
+            }
+          }
+        }
+      }        
     }
 
     return results
