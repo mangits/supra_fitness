@@ -4,7 +4,7 @@
 
 ## Contents
 
-### 1. Fitness Scores API 
+1. Fitness Scores API 
 
 ## Fitness Scores API
 
@@ -389,7 +389,7 @@ Example:
 Use `category` to filter out all but one category.
 
 Use `age` to filter out all but one age bracket. 
-NOTE: You can type in any age. If you type in 26, for example, the api will know to return 29 (the 25-29 age bracket)
+*NOTE*: You can type in any age. If you type in 26, for example, the api will know to return 29 (the 25-29 age bracket)
 
 Use `gender` to filter one of the sexes. 
 
@@ -417,7 +417,7 @@ For example: `\scores?gender=female` :
 `GET` `\scores` with `raw` query
 
 Use `raw` to get a simplified object. 
-NOTE: This will only work if you have at least the `gender` and `age` are specified. 
+*NOTE*: This will only work if you have at least `gender` and `age` are specified. 
 
 If you have only the `gender` and `age` specified, you will be returned a simplified object: 
 
