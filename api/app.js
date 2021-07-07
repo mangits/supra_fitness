@@ -63,7 +63,7 @@ app.get('/scores', function(req, res) {
 
     for (let gender of genders) {
       for (let age of ages) {
-        if (age <= 24 && gender === 'male') {
+        if (age <= 24) {
           results[gender][age].run_scores = await knex.select('run', 'run_points')
             .from(`run_${gender}s_${age}_below`)
             .then(data => data)
@@ -74,8 +74,27 @@ app.get('/scores', function(req, res) {
             .from(`situps_${gender}s_${age}_below`)
             .then(data => data)
         }
+        else if (age >= 60) {
+          results[gender][age].run_scores = await knex.select('run', 'run_points')
+            .from(`run_${gender}s_${age}_plus`)
+            .then(data => data)
+          results[gender][age].pushups_scores = await knex.select('pushups', 'pushups_points')
+            .from(`pushups_${gender}s_${age}_plus`)
+            .then(data => data)
+          results[gender][age].situps_scores = await knex.select('situps', 'situps_points')
+            .from(`situps_${gender}s_${age}_plus`)
+            .then(data => data)
+        }
         else {
-          console.log('To-do...')
+          results[gender][age].run_scores = await knex.select('run', 'run_points')
+            .from(`run_${gender}s_${age}`)
+            .then(data => data)
+          results[gender][age].pushups_scores = await knex.select('pushups', 'pushups_points')
+            .from(`pushups_${gender}s_${age}`)
+            .then(data => data)
+          results[gender][age].situps_scores = await knex.select('situps', 'situps_points')
+            .from(`situps_${gender}s_${age}`)
+            .then(data => data)
         }
       }
     }

@@ -396,7 +396,7 @@ Use `gender` to filter one of the sexes.
 All three of these queries can be used interchangebly.
 The structure of the object returned will not change.
 
-For example: `\scores?gender=female` :
+For example: `\scores?gender=female`
 
 ```
 {

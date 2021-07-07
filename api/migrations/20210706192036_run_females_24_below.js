@@ -1,6 +1,6 @@
 
 exports.up = function(knex) {
-    return knex.schema.createTable('run_females_25', table => {
+    return knex.schema.createTable('run_females_24_below', table => {
         table.increments('id');
         table.integer('run').notNullable();
         table.string('health_risk_category').notNullable();
@@ -9,6 +9,6 @@ exports.up = function(knex) {
   };
   
   exports.down = function(knex) {
-    return knex.schema.dropTableIfExists('run_females_25');
+    return knex.schema.dropTableIfExists('run_females_24_below');
   };
   
