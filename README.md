@@ -1,12 +1,12 @@
 # Supra Fitness
 
-## The ultimate fitness app for Airman and Guardians alike
+### The ultimate fitness app for Airman and Guardians alike
 
-# Contents
+## Contents
 
-## 1. Fitness Scores API 
+### 1. Fitness Scores API 
 
-# Fitness Scores API
+## Fitness Scores API
 
 `GET` `\scores`
 
@@ -417,7 +417,7 @@ For example: `\scores?gender=female` :
 `GET` `\scores` with `raw` query
 
 Use `raw` to get a simplified object. 
-NOTE: This will only work if you have at least the `gender` and `age` specified. 
+NOTE: This will only work if you have at least the `gender` and `age` are specified. 
 
 If you have only the `gender` and `age` specified, you will be returned a simplified object: 
 
