@@ -10,17 +10,17 @@
 
 `GET` `\scores`
 
-Returns an object with all scores for both sexes and age bracket. Age brackets are categorized by a numeric identifier as follows: 
+Returns an object with all scores for both sexes and all age brackets. Age brackets are categorized by a numeric identifier as follows: 
 
-* 24: 24 years of age and below
-* 29: 25 - 29 years of age
-* 34: 30 - 34 years of age
-* 39: 35 - 39 years of age
-* 44: 40 - 44 years of age
-* 49: 45 - 49 years of age
-* 54: 50 - 54 years of age
-* 59: 55 - 59 years of age
-* 60: 60 years of age and above
+* **24**: 24 years of age and below
+* **29**: 25 - 29 years of age
+* **34**: 30 - 34 years of age
+* **39**: 35 - 39 years of age
+* **44**: 40 - 44 years of age
+* **49**: 45 - 49 years of age
+* **54**: 50 - 54 years of age
+* **59**: 55 - 59 years of age
+* **60**: 60 years of age and above
 
 Also note that run times are stored in seconds. 
 
