@@ -4,7 +4,7 @@ exports.up = function(knex) {
         table.increments('id');
         table.integer('run').notNullable();
         table.string('health_risk_category').notNullable();
-        table.decimal('run_points', 3).notNullable();
+        table.decimal('run_points').notNullable();
     })
   };
   
