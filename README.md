@@ -512,6 +512,48 @@ For example: `\scores?gender=male&&age=24&&category=true&&raw=true`
     ...
 ]
 ```
+---
+
+`GET` `\workout`
+
+Use this to get a random workout from a database of random workout. Excercises, sets, and reps are stored in an arry. Each workout's arrays will have the same length. 
+
+```
+[
+    {
+        "id": 2,
+        "workout_name": "curl complex",
+        "description": "curl until you die",
+        "movement_ids": [
+            "dumbbell curls",
+            "preacher curls",
+            "barbell curls",
+            "hammer curls",
+            "reverse curls",
+            "concentration curls",
+            "spider curls"
+        ],
+        "sets": [
+            3,
+            3,
+            3,
+            3,
+            3,
+            3,
+            3
+        ],
+        "reps": [
+            10,
+            10,
+            10,
+            10,
+            10,
+            10,
+            10
+        ]
+    }
+]
+```
 
 [Back to Top](#supra-fitness)
 
