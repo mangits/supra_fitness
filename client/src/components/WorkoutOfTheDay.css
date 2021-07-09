@@ -1,0 +1,21 @@
+.WODContainer {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    height: 93vh;
+}
+
+.WODTable {
+    grid-column: 4 / span 6;
+    grid-row: 4 / span 6;
+}
+
+.WODTitle {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 10;
+}
+
+.WODSubTitle {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 10;
+}

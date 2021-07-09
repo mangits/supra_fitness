@@ -48,7 +48,7 @@ To-do:
 - [x] Fix letter casing
 - [ ] Have it only change a workout every day
 
-![Fitness Assessment Preview](client/images/WOD.jpg)
+![WOD Module Preview](client/images/WOD.jpg)
 
 ### Official Fitness Assessment
 
