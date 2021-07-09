@@ -25,6 +25,8 @@ To-do:
 
 ![Fitness Assessment Preview](client/images/fitnessAssesmentCalculator.jpg)
 
+[Back to Top](#supra-fitness)
+
 ## API
 
 ### Fitness Scores API 
