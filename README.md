@@ -2,9 +2,26 @@
 
 ### The ultimate fitness app for Airman and Guardians alike
 
+![Home Page Preview](client\images\homepage.jpg)
+
 ## Contents
 
-1. Fitness Scores API 
+1. Modules
+
+2. Fitness Scores API 
+
+## Modules
+
+### Fitness Assessment Calculator
+
+A form to calculate any Air Force/Space Force PT score for all ages and genders. Up to date with the latest PT charts as of May 2021. 
+
+To-do:
+
+[x] Fill database with data for all ages and genders
+[ ] Stress test and ensure validity of data being supplied
+
+![Fitness Assessment Preview](client\images\fitnessAssesmentCalculator.jpg)
 
 ## Fitness Scores API
 
