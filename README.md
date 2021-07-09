@@ -2,7 +2,7 @@
 
 ### The ultimate fitness app for Airman and Guardians alike
 
-![Home Page Preview](client\images\homepage.jpg)
+![Home Page Preview](.\client\images\homepage.jpg)
 
 ## Contents
 
@@ -21,7 +21,7 @@ To-do:
 [x] Fill database with data for all ages and genders
 [ ] Stress test and ensure validity of data being supplied
 
-![Fitness Assessment Preview](client\images\fitnessAssesmentCalculator.jpg)
+![Fitness Assessment Preview](.\client\images\fitnessAssesmentCalculator.jpg)
 
 ## Fitness Scores API
 
