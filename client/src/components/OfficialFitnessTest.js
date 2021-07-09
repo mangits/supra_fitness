@@ -1,25 +1,28 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Button from '@material-ui/core/Button';
 import PTForm from './PTForm.js'
-import Timer from './Timer.js'
+// import Timer from './Timer.js'
+import OFTContext from '../context/OFTContext.js';
 
 function OfficialFitnessTest () {
   const [page, setPage] = useState(1);
-  const [memberForms, setMemberForm] = useState([])
-  const [id, setId] = useState(0)
+  const [id, setId] = useState(1)
+  const [memberForms, setMemberForm] = useState([{id}])
+  
 
   const addMember = () => {
     setId(id + 1)
-    setMemberForm(memberForms.push(<PTForm id={id}/>))
+    setMemberForm([...memberForms, id])
   }
-
-  useEffect(()=>{
-    addMember()
-  }, [])
 
   const removeMember = () => {
     setId(id - 1)
-    setMemberForm(memberForms.pop())
+    let tempArray = memberForms
+    console.log(tempArray)
+    // console.log(id)
+    tempArray.splice(id-2, 1)
+    console.log(tempArray)
+    setMemberForm(tempArray)
   }
 
   let section_title = [
@@ -33,39 +36,45 @@ function OfficialFitnessTest () {
   const nextPage = (e) => {
     e.preventDefault()
     setPage(page + 1)
+    console.log('nextButton', page)
   }
   
   const prevPage = (e) => {
     e.preventDefault()
     setPage(page - 1)
+    console.log('prevButton', page)
   }
 
 return (
-  <div>
-    {section_title[page -1]}
-    {(page === 4) ?
-      <>
-        <Timer />
-      </> : <></>
-    }
-    {memberForms}
-    {(memberForms.length > 1) ?
-      <>
-        <img onClick={()=>removeMember()} src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/minus_2796.png' alt='minus'/>
-      </> : <></>
-    }
-    <img onClick={()=>addMember()} src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/plus_2795.png" alt='plus'/>
-    {(page <= 2) ?
-      <>
-        <Button onClick={(e)=>{prevPage(e)}}> </Button>
-      </> : <></>
-    }
-    {(page > 5) ?
-      <>
-        <Button onClick={(e)=>{nextPage(e)}}> </Button>
-      </> : <></>
-    }
-  </div>
+  <OFTContext.Provider value={{page}}>
+    <div>
+      <div>
+        {section_title[page -1]}
+      </div>
+      {(page === 4) ?
+        <>
+          {/* <Timer /> */}
+        </> : <></>
+      }
+      {memberForms.map(form=>{ 
+        return <PTForm id={id} page={page} />})}
+      <div>
+      {(memberForms.length > 1) ?
+          <img height='20' onClick={()=>removeMember()} src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/minus_2796.png' alt='minus'/>
+        : <></>
+      }
+      <img height='20' onClick={()=>addMember()} src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/plus_2795.png" alt='plus'/>
+      </div>
+      {(page >= 2) ?
+          <Button variant="contained" color="primary" onClick={(e)=>{prevPage(e)}}>Prev</Button>
+         : <></>
+      }
+      {(page < 5) ?
+          <Button variant="contained" color="primary" onClick={(e)=>{nextPage(e)}}>Next</Button>
+         : <></>
+      }
+    </div>
+  </OFTContext.Provider>
 )
 }
 export default OfficialFitnessTest;

@@ -34,6 +34,7 @@ To-do:
 
 - [ ] Implement
 - [ ] Allow users to filter out unwanted sheets
+- [ ] Add material-ui styling
 
 ### Workout of the Day
 
@@ -41,8 +42,13 @@ Get a recommended workout for the day.
 
 To-do:
 
-- [ ] Implement
-- [x] Create a table in the database to hold workouts and WODs
+- [x] Implement
+- [x] Create a table in the database to hold workouts and WOD
+- [x] Add material-ui styling
+- [x] Fix letter casing
+- [ ] Have it only change a workout every day
+
+![Fitness Assessment Preview](client/images/WOD.jpg)
 
 ### Official Fitness Assessment
 
@@ -51,6 +57,7 @@ Input scores and get your official PT Test forms digitally signed by you and you
 To-do:
 
 - [ ] Implement
+- [ ] Add material-ui styling
 
 [Back to Top](#supra-fitness)
 
