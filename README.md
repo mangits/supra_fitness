@@ -485,6 +485,8 @@ Database   | API     | Front-End | Styling
 ---------- | ------- | --------- | ----------- 
 Postgresql | Express | React     | Material-UI
 
+* **Docker** to contain the application
+
 ### Instructions
 
 1. Fork and clone this repository
