@@ -12,6 +12,11 @@ exports.seed = function(knex) {
                movement_ids: [4,11,15,8],
                sets: [4,4,4,4],
                reps: [10,10,10,10]},
+               {workout_name: 'easy stuff',
+               description: 'test workout',
+               movement_ids: [1,2,3],
+               sets: [1,1,1],
+               reps: [10,10,10]}
           ]);
       });
 };

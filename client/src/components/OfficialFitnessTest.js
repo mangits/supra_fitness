@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import Button from '@material-ui/core/Button';
 import PTForm from './PTForm.js'
+import Timer from './Timer.js'
 
 function OfficialFitnessTest () {
   const [page, setPage] = useState(1);
@@ -42,11 +43,28 @@ function OfficialFitnessTest () {
 return (
   <div>
     {section_title[page -1]}
+    {(page === 4) ?
+      <>
+        <Timer />
+      </> : <></>
+    }
     {memberForms}
-    <img onClick={()=>removeMember()} src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/minus_2796.png' alt='minus'/>
+    {(memberForms.length > 1) ?
+      <>
+        <img onClick={()=>removeMember()} src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/minus_2796.png' alt='minus'/>
+      </> : <></>
+    }
     <img onClick={()=>addMember()} src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/plus_2795.png" alt='plus'/>
-    <Button onClick={(e)=>{prevPage(e)}}> </Button>
-    <Button onClick={(e)=>{nextPage(e)}}> </Button>
+    {(page <= 2) ?
+      <>
+        <Button onClick={(e)=>{prevPage(e)}}> </Button>
+      </> : <></>
+    }
+    {(page > 5) ?
+      <>
+        <Button onClick={(e)=>{nextPage(e)}}> </Button>
+      </> : <></>
+    }
   </div>
 )
 }

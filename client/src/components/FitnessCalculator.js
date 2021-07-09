@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './FitnessCalculator.css'
 import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
-import Select from '@material-ui/core/Select';
-import InputLabel from '@material-ui/core/InputLabel';
 import Button from '@material-ui/core/Button';
-import ResultsTable from './ResultsTable.js'
 import Typography from '@material-ui/core/Typography';
+import AppContext from '../context/AppContext.js'
 
 function FitnessCalculator () {
+  const { ScoreCalculator } = useContext(AppContext)
   const [results, setResults] = useState([])
   const [userData, setUserData] = useState({})
 
@@ -36,99 +35,7 @@ function FitnessCalculator () {
       .then(response=>response.json())
       .then(data=>{ return data })
     
-    ScoreCalculator(scoreInfo, userData)
-  }
-
-  function ScoreCalculator (scoreObj, userObj) {
-
-    let pushupPoints = {
-     name: 'Pushups',
-     amount: userObj.pushups,
-     score: 0,
-     total: 20,
-     result: ''
-    }
-
-        let situpPoints = {
-     name: 'Situps',
-     amount: userObj.situps,
-     score: 0,
-     total: 20,
-     result: ''
-    }
-
-        let runPoints = {
-     name: 'Run',
-     amount: userObj.runTime,
-     score: 0,
-     total: 60,
-     result: ''
-    }
-
-    if((userObj.pushups > scoreObj.pushups_scores[0].pushups)) {
-       pushupPoints.score = 20
-      pushupPoints.result = 'PASS'
-    } else {
-      let data = scoreObj.pushups_scores.filter(score => {
-        return Number(score.pushups) === Number(userObj.pushups)})
-      if (data.length === 0) {
-        pushupPoints.result = 'FAIL'
-      } else {
-        pushupPoints.score = Number(data[0].pushups_points)
-        pushupPoints.result = 'PASS'
-      }
-    }
-
-    if((userObj.situps > scoreObj.situps_scores[0].situps)) {
-      situpPoints.score = 20
-      situpPoints.result = 'PASS'
-    } else {
-      let data = scoreObj.situps_scores.filter(score => {
-        return Number(score.situps) === Number(userObj.situps)})
-      if (data.length === 0) {
-        situpPoints.result = 'FAIL'
-      } else {
-        situpPoints.score = Number(data[0].situps_points)
-        situpPoints.result = 'PASS'
-      }
-    }
-
-    if ((userObj.runTime < scoreObj.run_scores[0].run)) {
-      runPoints.score = 60
-      runPoints.result = 'PASS'
-    } else {
-      let runArray = scoreObj.run_scores
-      for (let i = 0; i < runArray.length; i++) {
-        if (Number(userObj.runTime) <= Number(runArray[i].run)) {
-          runPoints.score =  Number(runArray[i].run_points)
-          runPoints.result = 'PASS'
-          break;
-        }
-      } 
-      if (runPoints.length === 0) {
-        runPoints.result = 'FAIL'
-      }
-    }
-
-    let totalScore = {
-      score: 0,
-      result: ''
-    }
-    totalScore.score = runPoints.score + situpPoints.score + pushupPoints.score
-
-    if (runPoints.result === 'FAIL' || situpPoints.result === 'FAIL' || pushupPoints.result === 'FAIL') {
-      totalScore.result = 'UNSATISFACTORY'
-    } else if (totalScore.score < 75) {
-      totalScore.result = 'UNSATISFACTORY'
-    } else if (totalScore.score < 90) {
-      totalScore.result = 'SATISFACTORY'
-    } else {
-      totalScore.result = 'EXCELLENT'
-    }
-
-    let components = [runPoints, pushupPoints, situpPoints]
-    
-    setResults(<ResultsTable componentsData={components} total={totalScore}/>)
+    ScoreCalculator(scoreInfo, userData, setResults)
   }
 
   return (

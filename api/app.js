@@ -166,6 +166,36 @@ app.get('/scores', function(req, res) {
     .then(data => res.status(200).json(data))
 })
 
+app.get('/workout', function (req, res) {
+
+  async function getWorkout() {
+  
+  let workout = await knex.select('*')
+                          .from('workouts')
+                          .orderByRaw('RANDOM()')
+                          .limit(1)
+
+  let movements = await knex.select('*')
+                            .from('movements')
+
+  for (i=0; i < workout[0].movement_ids.length; i++) {
+    for (j=0; j < movements.length; j++) {
+
+      if (workout[0].movement_ids[i] === movements[j].id) {
+        workout[0].movement_ids[i] = movements[j].movement_name
+      }
+    }
+  }
+  
+  return workout
+  }
+
+getWorkout().then(data => res.status(200).json(data))
+            .catch(err => res.status(404).json({message: 'Take a rest day'})
+)})
+
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -182,5 +212,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
 
+
+
+module.exports = app;
