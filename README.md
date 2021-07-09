@@ -6,8 +6,9 @@
 
 ## Contents
 
-- 1 Modules
-- 2 API 
+- Modules
+- API
+- About
 
 ## Modules
 
@@ -474,4 +475,15 @@ For example: `\scores?gender=male&&age=24&&category=true&&raw=true`
     ...
 ]
 ```
+
+## About 
+
+This repository was created as the 2nd project in the Supra Coders Cohort in partnerships with Galvanize. 
+
+### Authors
+
+- barrazaedier
+- mangits
+- SamCrouch
+- khalilcampbell7
 
