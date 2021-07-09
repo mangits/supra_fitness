@@ -479,6 +479,8 @@ For example: `\scores?gender=male&&age=24&&category=true&&raw=true`
 ]
 ```
 
+[Back to Top](#supra-fitness)
+
 ## Development
 
 ### Tech Stack
@@ -498,6 +500,8 @@ Postgresql | Express | React     | Material-UI
 5. Type `http://localhost:3000` in your browser to view the website
 6. When done, `cd` into the local remote's root folder and run `npm run docker:down`
 
+[Back to Top](#supra-fitness)
+
 ## About 
 
 This repository was created as the 2nd project in the Supra Coders Cohort in partnership with Galvanize. 
@@ -509,3 +513,4 @@ This repository was created as the 2nd project in the Supra Coders Cohort in par
 - SamCrouch
 - khalilcampbell7
 
+[Back to Top](#supra-fitness)
