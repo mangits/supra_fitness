@@ -481,6 +481,10 @@ For example: `\scores?gender=male&&age=24&&category=true&&raw=true`
 
 ### Tech Stack
 
+Database | Postgresql
+API      | Express
+UI       | React
+
 ### Instructions
 
 1. Fork and clone this repository
