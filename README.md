@@ -7,9 +7,9 @@
 ## Contents
 
 1. [Modules](#modules)
-2. API
-3. Development
-4. About
+2. [API](#api)
+3. [Development](#development)
+4. [About](#about)
 
 ## Modules
 
