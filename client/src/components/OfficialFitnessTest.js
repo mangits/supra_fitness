@@ -3,6 +3,7 @@ import Button from '@material-ui/core/Button';
 import PTForm from './PTForm.js'
 // import Timer from './Timer.js'
 import OFTContext from '../context/OFTContext.js';
+import './OFT.css'
 
 function OfficialFitnessTest () {
   const [page, setPage] = useState(1);
@@ -47,9 +48,9 @@ function OfficialFitnessTest () {
 
 return (
   <OFTContext.Provider value={{page}}>
-    <div>
-      <div>
-        {section_title[page -1]}
+    <div className="OFTContainer">
+      <div className="OFTContainerTitle">
+        <h1>{section_title[page -1]}</h1>
       </div>
       {(page === 4) ?
         <>
@@ -58,13 +59,17 @@ return (
       }
       {memberForms.map(form=>{ 
         return <PTForm id={id} page={page} />})}
-      <div>
-      {(memberForms.length > 1) ?
+      <div className="plusAndMinusButtons">
+      {(memberForms.length > 1 && page === 1 && memberForms.length < 12) ?
           <img height='20' onClick={()=>removeMember()} src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/minus_2796.png' alt='minus'/>
         : <></>
       }
+      {(page === 1 && memberForms.length < 12) ?
       <img height='20' onClick={()=>addMember()} src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/twitter/282/plus_2795.png" alt='plus'/>
+      : <></>
+      }
       </div>
+        <div className="prevAndNextButtons">
       {(page >= 2) ?
           <Button variant="contained" color="primary" onClick={(e)=>{prevPage(e)}}>Prev</Button>
          : <></>
@@ -73,6 +78,7 @@ return (
           <Button variant="contained" color="primary" onClick={(e)=>{nextPage(e)}}>Next</Button>
          : <></>
       }
+        </div>
     </div>
   </OFTContext.Provider>
 )

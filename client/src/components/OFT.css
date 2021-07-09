@@ -1,14 +1,70 @@
-.OFTForm {
+.OFTContainer {
+  /* border: 2px solid black; */
+  display: grid;
+  height: 91vh;
+  grid-template-rows: 1fr 3fr 3fr 3fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+.OFTContainerTitle {
+  /* Register Members */
+  /* border: 2px solid red; */
+  grid-column: 1 / span 4;
+}
+
+.PTContainer {
+  /* border: 2px solid green; */
   display: flex;
   flex-direction: column;
-  align-items: space-between;
-  grid-column: 4 / span 6;
-  grid-row: 2 / span 9;
-  height: 10vh;
 }
-.OFT {
+
+.PTName {
   display: flex;
   justify-content: center;
-  padding-left: 30vw;
-  padding-right: 30vw;
+  align-items: center;
+  /* border: 2px solid blue; */
+  height: 12%;
+  padding: 10px;
 }
+
+.PT {
+  border: 2px solid purple;
+  height: 88%;
+}
+
+.PTForm {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid orange; */
+  height: 100%;
+  padding: 10px;
+}
+
+.plusAndMinusButtons {
+  /* border: 2px solid pink; */
+  display: flex;
+  align-items: center;
+}
+
+.plusAndMinusButtons img {
+  /* border: 2px solid pink; */
+  padding: 10px;
+}
+
+.prevAndNextButtons {
+  /* border: 2px solid gray; */
+  grid-row: 5 / span 1;
+  grid-column: 1 / span 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prevAndNextButtons button {
+  /* border: 2px solid black; */
+  height: 60%;
+  margin-left: 10px;
+}
+

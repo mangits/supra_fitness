@@ -56,8 +56,13 @@ Input scores and get your official PT Test forms digitally signed by you and you
 
 To-do:
 
-- [ ] Implement
-- [ ] Add material-ui styling
+- [x] Implement
+- [x] Add material-ui styling
+- [ ] Add exemption checkbox
+- [ ] Add signing boxes
+- [ ] Cap amount of members that can be added to 12 at a time
+- [ ] Implement actual requirement
+- [ ] Implement Paper
 
 [Back to Top](#supra-fitness)
 

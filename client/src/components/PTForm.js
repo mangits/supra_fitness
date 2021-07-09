@@ -7,6 +7,10 @@ import Button from '@material-ui/core/Button';
 import SignatureCanvas from 'react-signature-canvas'
 import AppContext from '../context/AppContext.js'
 import OFTContext from '../context/OFTContext';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Paper from '@material-ui/core/Paper'
+
 import './OFT.css'
 // import useFirstRender from '../hooks/useFirstRender'
 
@@ -71,14 +75,14 @@ function PTForm ({ id }) {
   // }, [flag])
 
   return (
-    <div>
-      <Typography>
-        <div>
-        {userData.name}:
-        </div>
-      </Typography>
-      <div className="OFT">
-        <form className="OFTForm" onChange={(e)=>{handleChange(e)}}>
+    <div className="PTContainer">
+      <Paper elevation={3}>
+        <Typography className="PTName">
+          <div>
+          {userData.name ? `${userData.name}:` : 'Enter Member Info:'}
+          </div>
+        </Typography>
+        <form className="PTForm" onChange={(e)=>{handleChange(e)}}>
           {(page === 1) ?
           <>
             <div className="">
@@ -103,6 +107,16 @@ function PTForm ({ id }) {
             <div className="groupInput" >   
               <TextField label="Push-ups" name='pushups'  className="groupField" required/>
               <TextField label="Sit-ups"  name='situps' className="groupField" required/>
+              {/* <FormControlLabel
+                control={
+                  <Checkbox
+                    checked={checked.situps}
+                    onChange={handleChange}
+                    name="situpsExempt"
+                    color="primary"
+                  />
+                }
+                /> */}
             </div>
           : <></>
           }
@@ -128,7 +142,7 @@ function PTForm ({ id }) {
               </> : <></>
           }
         </form>
-      </div>
+      </Paper>
     </div>
   )
 }
