@@ -6,9 +6,10 @@
 
 ## Contents
 
-- Modules
-- API
-- About
+1. Modules
+2. API
+3. Development
+4. About
 
 ## Modules
 
@@ -475,6 +476,19 @@ For example: `\scores?gender=male&&age=24&&category=true&&raw=true`
     ...
 ]
 ```
+
+## Development
+
+### Tech Stack
+
+### Instructions
+
+1. Fork and clone this repository
+2. Make sure docker and wsl are up and running
+3. `cd` into the local remote and run `npm run docker:build`
+4. Run `npm run docker:up`
+5. Type `http://localhost:3000` in your browser to view the website
+6. When done, `cd` into the local remote and run `npm run docker:down`
 
 ## About 
 
