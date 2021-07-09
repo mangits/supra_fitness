@@ -512,7 +512,7 @@ For example: `\scores?gender=male&&age=24&&category=true&&raw=true`
     ...
 ]
 ```
----
+### Random Workout APIs
 
 `GET` `\workout`
 
