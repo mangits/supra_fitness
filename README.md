@@ -6,8 +6,8 @@
 
 ## Contents
 
-- 1) Modules
-- 2) API 
+- 1 Modules
+- 2 API 
 
 ## Modules
 
@@ -23,9 +23,9 @@ To-do:
 
 ![Fitness Assessment Preview](client/images/fitnessAssesmentCalculator.jpg)
 
-### API
+## API
 
-## Fitness Scores API 
+### Fitness Scores API 
 
 `GET` `\scores`
 
