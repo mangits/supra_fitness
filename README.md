@@ -37,7 +37,7 @@ To-do:
 
 ### Workout of the Day
 
-View the most up-to-date standards of the Air Force/Space Force PT assessments.
+Get a recommended workout for the day.
 
 To-do:
 
