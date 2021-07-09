@@ -19,11 +19,38 @@ A form to calculate any Air Force/Space Force PT score for all ages and genders.
 
 To-do:
 
+- [x] Implement
 - [x] Fill database with data for all ages and genders
 - [x] Add material-ui styling
 - [ ] Stress test and ensure validity of data being supplied
 
 ![Fitness Assessment Preview](client/images/fitnessAssesmentCalculator.jpg)
+
+### Fitness Assessment Charts
+
+View the most up-to-date standards of the Air Force/Space Force PT assessments.
+
+To-do:
+
+- [ ] Implement
+- [ ] Allow users to filter out unwanted sheets
+
+### Workout of the Day
+
+View the most up-to-date standards of the Air Force/Space Force PT assessments.
+
+To-do:
+
+- [ ] Implement
+- [x] Create a table in the database to hold workouts and WODs
+
+### Official Fitness Assessment
+
+Input scores and get your official PT Test forms digitally signed by you and your supervisors.
+
+To-do:
+
+- [ ] Implement
 
 [Back to Top](#supra-fitness)
 
