@@ -6,7 +6,7 @@
 
 ## Contents
 
-1. Modules
+1. [Modules](#modules)
 2. API
 3. Development
 4. About
