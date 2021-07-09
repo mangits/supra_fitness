@@ -481,9 +481,9 @@ For example: `\scores?gender=male&&age=24&&category=true&&raw=true`
 
 ### Tech Stack
 
-Database | Postgresql
-API      | Express
-UI       | React
+Database   | API     | Front-End
+---------- | ------- | ---------
+Postgresql | Express | React
 
 ### Instructions
 
