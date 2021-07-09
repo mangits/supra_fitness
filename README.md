@@ -437,7 +437,7 @@ For example: `\scores?gender=female`
 `GET` `\scores` with `raw` query
 
 Use `raw` to get a simplified object. 
-*NOTE*: This will only work if you have at least `gender` and `age` are specified. 
+*NOTE*: This will only work if you have at least `gender` and `age` specified. 
 
 If you have only the `gender` and `age` specified, you will be returned a simplified object: 
 
@@ -478,9 +478,9 @@ For example: `\scores?gender=male&&age=24&&category=true&&raw=true`
 
 ## About 
 
-This repository was created as the 2nd project in the Supra Coders Cohort in partnerships with Galvanize. 
+This repository was created as the 2nd project in the Supra Coders Cohort in partnership with Galvanize. 
 
-### Authors
+### Contributors
 
 - barrazaedier
 - mangits
